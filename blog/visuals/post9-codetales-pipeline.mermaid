@@ -1,0 +1,13 @@
+flowchart LR
+    IN["Input\n(GitHub URL or local path)"]
+    CL["Clone\n(gitpython\nshallow depth=1)"]
+    AN["Analyze\n(languages, deps,\nframeworks, patterns)"]
+    NA["Narrate\n(Claude\nstreaming API)"]
+    SY["Synthesize\n(ElevenLabs TTS)"]
+    OUT["Output\n(script.md +\nstory.mp3)"]
+
+    IN --> CL
+    CL --> AN
+    AN --> NA
+    NA --> SY
+    SY --> OUT
