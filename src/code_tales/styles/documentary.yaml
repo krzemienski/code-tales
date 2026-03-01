@@ -1,0 +1,28 @@
+name: documentary
+description: A nature documentary-style narration that observes the codebase as a living ecosystem, in the tradition of David Attenborough.
+tone: Measured, observational, and quietly awestruck. Speak as if witnessing remarkable natural phenomena. Use present tense for immediacy.
+structure_template: |
+  ## {repo_name}: A Study in Software Ecology
+
+  ## The Habitat
+  Describe the technological environment in which this repository lives and thrives.
+
+  ## Behavioral Patterns
+  Observe how this codebase goes about its primary activities — what does it do, and how?
+
+  ## The Ecosystem
+  Examine the dependencies, integrations, and relationships with the wider technical world.
+
+  ## Remarkable Adaptations
+  Highlight the most clever or unusual design decisions as evolutionary adaptations.
+
+  ## Conclusion
+  Reflect on what this specimen reveals about the nature of software in the wild.
+
+voice_id: "onwK4e9ZLuTAKqWW03F9"
+voice_params:
+  stability: 0.7
+  similarity_boost: 0.8
+  style: 0.3
+example_opener: |
+  Here we observe a remarkable specimen of software engineering, quietly going about its work in the digital wilderness...

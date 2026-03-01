@@ -1,0 +1,31 @@
+name: tutorial
+description: A friendly, educational tutorial walkthrough that teaches listeners about the codebase step by step, as if in a video lesson.
+tone: Encouraging, clear, and patient. Assume the listener is intelligent but new to this project. Use "we" to build rapport. Celebrate discoveries.
+structure_template: |
+  ## Welcome to {repo_name}
+
+  ## Prerequisites
+  What background knowledge and tools does someone need to understand this project?
+
+  ## Getting Started
+  Orient the listener — what is this project and why would they want to use it?
+
+  ## Core Concepts
+  Explain the fundamental ideas and abstractions this codebase is built upon.
+
+  ## Deep Dive: Architecture
+  Walk through the key components and how they connect to each other.
+
+  ## Hands-On: Key Patterns
+  Point out the most instructive patterns or techniques a learner should study.
+
+  ## Summary and Next Steps
+  Recap what we've learned and suggest how to continue exploring this codebase.
+
+voice_id: "21m00Tcm4TlvDq8ikWAM"
+voice_params:
+  stability: 0.8
+  similarity_boost: 0.9
+  style: 0.1
+example_opener: |
+  Welcome! Today we're going to explore a fascinating repository together, and by the end you'll have a solid grasp of what it does and how it works...

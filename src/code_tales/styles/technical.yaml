@@ -1,0 +1,31 @@
+name: technical
+description: A precise, structured technical review suitable for engineering teams evaluating adoption decisions.
+tone: Authoritative, precise, and dense with accurate information. No fluff. Reference specific technical decisions and trade-offs. Use correct terminology.
+structure_template: |
+  ## Technical Review: {repo_name}
+
+  ## Overview
+  State the project's purpose, primary interface, and intended use cases in concrete terms.
+
+  ## Architecture
+  Describe the system's structural design — components, boundaries, data flow, and key abstractions.
+
+  ## Implementation Details
+  Cover the significant implementation choices: algorithms, data structures, concurrency model, error handling.
+
+  ## API Surface
+  Describe the public interface — what does a consumer of this project interact with?
+
+  ## Performance Characteristics
+  Analyze the computational complexity, resource usage, and known bottlenecks.
+
+  ## Conclusion
+  Summarize the project's technical strengths, weaknesses, and appropriate use cases.
+
+voice_id: "onwK4e9ZLuTAKqWW03F9"
+voice_params:
+  stability: 0.9
+  similarity_boost: 0.9
+  style: 0.0
+example_opener: |
+  This technical review covers the architecture, implementation quality, and operational characteristics of the subject repository...

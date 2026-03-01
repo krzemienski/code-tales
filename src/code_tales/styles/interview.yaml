@@ -1,0 +1,36 @@
+name: interview
+description: A Q&A interview format where an expert is questioned about the repository, revealing insights through dialogue.
+tone: Inquisitive yet warm. The interviewer asks probing questions; the expert gives thoughtful, specific answers. Create the sense of a real conversation.
+structure_template: |
+  ## In Conversation: {repo_name}
+
+  ## Introduction
+  Set the scene and introduce the subject of today's conversation.
+
+  ## Background Questions
+  Q: How would you describe this project to someone who's never heard of it?
+  A: Provide a clear, jargon-free explanation.
+
+  ## Architecture Deep Dive
+  Q: Walk us through how this system is actually put together.
+  A: Describe the architecture from a practitioner's perspective.
+
+  ## Design Decisions
+  Q: What were the hardest decisions you — or its creators — had to make?
+  A: Explore the trade-offs and alternatives that were considered.
+
+  ## Future Direction
+  Q: Where does a project like this go next? What's left to solve?
+  A: Reflect on limitations and opportunities.
+
+  ## Closing
+  Q: What should someone do if they want to learn more or contribute?
+  A: Give concrete next steps.
+
+voice_id: "21m00Tcm4TlvDq8ikWAM"
+voice_params:
+  stability: 0.7
+  similarity_boost: 0.8
+  style: 0.4
+example_opener: |
+  Today we're sitting down with an expert to discuss a repository that's been generating significant interest in the community...

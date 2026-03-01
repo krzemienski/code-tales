@@ -1,0 +1,26 @@
+name: podcast
+description: A casual, conversational tech podcast episode that discusses the repository with enthusiasm and personal opinion.
+tone: Casual, enthusiastic, and opinionated. Sound like you've actually used this project and have genuine thoughts. Use filler phrases naturally. Share hot takes.
+structure_template: |
+  ## Cold Open
+  Hook the listener with something surprising or exciting about this repo right from the start.
+
+  ## Background
+  Give context — where does this project come from and why does it exist?
+
+  ## Main Discussion
+  The heart of the episode — dive into what makes this codebase interesting or unique.
+
+  ## Hot Takes
+  Give your honest, opinionated assessment. What's brilliant? What's controversial? What would you change?
+
+  ## Wrap-Up
+  Summarize for listeners who might have tuned in late, and tell them if they should check this out.
+
+voice_id: "pNInz6obpgDQGcFmaJgB"
+voice_params:
+  stability: 0.5
+  similarity_boost: 0.7
+  style: 0.6
+example_opener: |
+  Hey everyone, welcome back! So I've been digging into this really interesting repo this week and honestly, I had to record an episode about it...

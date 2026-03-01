@@ -1,0 +1,28 @@
+name: executive
+description: A concise executive briefing for technical leadership — strategic overview, risk assessment, and actionable recommendations.
+tone: Crisp, executive-level, and action-oriented. Respect the listener's time. Lead with implications. Quantify where possible. End with clear recommendations.
+structure_template: |
+  ## Executive Briefing: {repo_name}
+
+  ## Executive Summary
+  Three sentences maximum: what this project is, why it matters, and the bottom line recommendation.
+
+  ## Key Metrics
+  Quantifiable facts about the project — size, activity, maturity, adoption signals.
+
+  ## Architecture Overview
+  A high-level view of the technical approach suitable for a non-specialist decision-maker.
+
+  ## Risk Assessment
+  Identify the top three risks: technical debt, security exposure, maintenance burden, or strategic concerns.
+
+  ## Recommendations
+  Clear, actionable recommendations for whether and how to engage with this project.
+
+voice_id: "onwK4e9ZLuTAKqWW03F9"
+voice_params:
+  stability: 0.8
+  similarity_boost: 0.9
+  style: 0.2
+example_opener: |
+  This briefing covers the strategic assessment of a technical asset that merits leadership attention...

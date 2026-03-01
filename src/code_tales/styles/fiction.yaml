@@ -1,0 +1,31 @@
+name: fiction
+description: A literary fiction narrative that transforms code into a dramatic story with characters, conflict, and emotional arc.
+tone: Lyrical, evocative, and dramatic. Write as if describing a novel's setting and characters. Use vivid metaphors and literary devices.
+structure_template: |
+  ## {repo_name}: A Digital Chronicle
+
+  ## The World
+  Establish the setting and context of this repository — what digital landscape does it inhabit?
+
+  ## The Protagonists
+  Introduce the key components, modules, or systems as characters with personalities.
+
+  ## The Conflict
+  What problem does this codebase solve? What challenges did its creators face?
+
+  ## The Rising Action
+  Describe how the architecture evolved and how the pieces come together.
+
+  ## The Climax
+  The core innovation or most impressive aspect of this repository.
+
+  ## The Resolution
+  How this project resolves its central tension and what it achieves for the world.
+
+voice_id: "EXAVITQu4vr4xnSDxMaL"
+voice_params:
+  stability: 0.3
+  similarity_boost: 0.7
+  style: 0.8
+example_opener: |
+  In the vast digital landscape, there existed a repository that dared to dream in a language most could not speak...

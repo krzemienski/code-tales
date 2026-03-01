@@ -1,0 +1,334 @@
+# code-tales
+
+[![PyPI version](https://img.shields.io/pypi/v/code-tales.svg)](https://pypi.org/project/code-tales/)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+**Transform any GitHub repository into a narrated audio story.**
+
+`code-tales` clones a repository, analyzes its structure, generates a narration script with Claude AI, and synthesizes speech with ElevenLabs TTS — in 9 distinctive narrative styles.
+
+```
+GitHub URL → Clone → Analyze → Narrate (Claude) → Synthesize (ElevenLabs) → Audio Story
+```
+
+---
+
+## Quick Start
+
+```bash
+pip install code-tales
+
+# Set API keys
+export ANTHROPIC_API_KEY=sk-ant-...
+export ELEVENLABS_API_KEY=...        # Optional — text output still works without it
+
+# Generate an audio story
+code-tales generate --repo https://github.com/tiangolo/fastapi --style documentary
+
+# Preview the script (no audio)
+code-tales preview --repo https://github.com/pallets/flask --style podcast
+
+# List all styles
+code-tales list-styles
+```
+
+---
+
+## Pipeline
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    code-tales pipeline                          │
+├──────────┬──────────┬──────────────┬──────────────┬────────────┤
+│  Input   │  Clone   │   Analyze    │   Narrate    │ Synthesize │
+│          │          │              │              │            │
+│ GitHub   │ gitpython│ Languages    │ Claude API   │ ElevenLabs │
+│ URL  or  │ shallow  │ Dependencies │ claude-      │ TTS API    │
+│ Local    │ clone    │ Frameworks   │ sonnet-4-6   │ 9 voices   │
+│ Path     │ depth=1  │ Patterns     │ streaming    │ mp3 output │
+│          │          │ Key files    │              │            │
+└──────────┴──────────┴──────────────┴──────────────┴────────────┘
+         Output: script.md + story.mp3
+```
+
+---
+
+## Style Showcase
+
+| Style | Description | Best For |
+|-------|-------------|----------|
+| `documentary` | David Attenborough observes code as a living ecosystem | Any project |
+| `fiction` | Literary drama with characters, conflict, and arc | OSS projects |
+| `tutorial` | Friendly educational walkthrough step-by-step | Libraries/SDKs |
+| `podcast` | Casual tech podcast episode with hot takes | Developer tools |
+| `technical` | Dense engineering review for practitioners | Architecture evaluation |
+| `debate` | Structured argument for and against design decisions | Controversial choices |
+| `interview` | Q&A with an expert about the codebase | Deep-dive learning |
+| `executive` | Crisp briefing for technical leadership | Adoption decisions |
+| `storytelling` | Hero's journey — the epic quest to solve a problem | Inspiring projects |
+
+---
+
+## Installation
+
+```bash
+# Core (text output only)
+pip install code-tales
+
+# With TTS audio synthesis
+pip install "code-tales[tts]"
+```
+
+---
+
+## API Keys Setup
+
+### Required: Anthropic (Claude AI)
+
+```bash
+export ANTHROPIC_API_KEY=sk-ant-your-key-here
+```
+
+Get a key at [console.anthropic.com](https://console.anthropic.com).
+
+### Optional: ElevenLabs (TTS Audio)
+
+```bash
+export ELEVENLABS_API_KEY=your-key-here
+```
+
+Get a key at [elevenlabs.io](https://elevenlabs.io). Without this key, `code-tales`
+still generates a full markdown script — just no `.mp3` audio file.
+
+---
+
+## CLI Reference
+
+### `generate` — Full Pipeline
+
+```bash
+code-tales generate [OPTIONS]
+
+Options:
+  --repo URL          GitHub repository URL
+  --path PATH         Local git repository path
+  --style NAME        Narrative style (required). See list-styles.
+  --output DIR        Output directory [default: ./output/]
+  --no-audio          Generate text script only, skip TTS
+  --verbose / -v      Enable debug logging
+```
+
+Examples:
+
+```bash
+# GitHub URL
+code-tales generate --repo https://github.com/django/django --style executive
+
+# Local repo
+code-tales generate --path ./my-project --style storytelling --output ./stories/
+
+# Text only (no ElevenLabs key needed)
+code-tales generate --repo https://github.com/rust-lang/rust --style technical --no-audio
+```
+
+### `preview` — Script Only
+
+```bash
+code-tales preview [OPTIONS]
+
+Options:
+  --repo URL      GitHub repository URL
+  --path PATH     Local git repository path
+  --style NAME    Narrative style (required)
+```
+
+### `list-styles` — Browse Styles
+
+```bash
+code-tales list-styles
+```
+
+---
+
+## Python API
+
+```python
+from code_tales import CodeTalesPipeline, CodeTalesConfig
+from pathlib import Path
+
+# Initialize
+config = CodeTalesConfig.from_env()
+pipeline = CodeTalesPipeline(config=config)
+
+# Generate full story
+result = pipeline.generate(
+    repo_url_or_path="https://github.com/tiangolo/fastapi",
+    style_name="documentary",
+    output_dir=Path("./output"),
+)
+
+print(f"Script: {result.text_path}")
+print(f"Audio:  {result.audio_path}")
+print(f"Words:  {result.script.word_count}")
+
+# Preview script only
+script = pipeline.preview(
+    repo_url_or_path="https://github.com/pallets/flask",
+    style_name="podcast",
+)
+
+for section in script.sections:
+    print(f"\n## {section.heading}")
+    print(section.content[:200] + "...")
+```
+
+---
+
+## Configuration
+
+All configuration can be set via environment variables:
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `ANTHROPIC_API_KEY` | — | Anthropic API key (required) |
+| `ELEVENLABS_API_KEY` | — | ElevenLabs API key (optional) |
+| `CODE_TALES_OUTPUT_DIR` | `./output` | Output directory |
+| `CODE_TALES_TEMP_DIR` | `/tmp/code-tales` | Temp directory for clones |
+| `CODE_TALES_CLONE_DEPTH` | `1` | Git clone depth |
+| `CODE_TALES_MAX_FILES` | `100` | Max files to analyze |
+| `CODE_TALES_MAX_FILE_SIZE` | `100000` | Max file size in bytes |
+| `CODE_TALES_CLAUDE_MODEL` | `claude-sonnet-4-6` | Claude model to use |
+| `CODE_TALES_MAX_TOKENS` | `4096` | Max script tokens |
+
+Or configure in Python:
+
+```python
+from code_tales import CodeTalesConfig, CodeTalesPipeline
+from pathlib import Path
+
+config = CodeTalesConfig(
+    anthropic_api_key="sk-ant-...",
+    elevenlabs_api_key="...",
+    output_dir=Path("./my-stories"),
+    claude_model="claude-opus-4-6",
+    max_script_tokens=8192,
+)
+pipeline = CodeTalesPipeline(config=config)
+```
+
+---
+
+## Custom Styles
+
+Create your own narrative style with a YAML file:
+
+```yaml
+# my-style.yaml
+name: noir
+description: Hard-boiled detective investigates the codebase
+tone: Cynical, world-weary, poetic — treat bugs as suspects
+structure_template: |
+  ## {repo_name}: A Case File
+
+  ## The Scene
+  First impressions of the codebase.
+
+  ## The Evidence
+  What the code reveals.
+
+  ## The Verdict
+  Final assessment.
+
+voice_id: "2EiwWnXFnvU5JabPnv8n"  # ElevenLabs voice ID
+voice_params:
+  stability: 0.6
+  similarity_boost: 0.75
+  style: 0.4
+example_opener: |
+  It was a dark and stormy deployment...
+```
+
+Load it in Python:
+
+```python
+from code_tales.styles.registry import get_registry
+from pathlib import Path
+
+registry = get_registry()
+registry.load_custom_style(Path("./my-style.yaml"))
+
+pipeline.generate("https://github.com/owner/repo", style_name="noir")
+```
+
+See `examples/custom-style.yaml` for a fully commented example.
+
+---
+
+## Architecture
+
+The pipeline is modular and each stage is independently importable:
+
+```
+src/code_tales/
+├── cli.py              — Click CLI (generate, preview, list-styles)
+├── config.py           — Configuration (env vars, defaults)
+├── models.py           — Pydantic data models
+├── pipeline/
+│   ├── clone.py        — Git clone + directory tree analysis
+│   ├── analyze.py      — Language, dependency, framework detection
+│   ├── narrate.py      — Claude API script generation
+│   ├── synthesize.py   — ElevenLabs TTS integration
+│   └── orchestrate.py  — Full pipeline with Rich progress display
+└── styles/
+    ├── registry.py     — Style loading and lookup
+    └── *.yaml          — 9 built-in style definitions
+```
+
+### Key Design Decisions
+
+- **Shallow clones** (`depth=1`) minimize network usage and storage
+- **Streaming Claude API** prevents HTTP timeouts on long scripts
+- **Text output always generated** — ElevenLabs is optional
+- **Style configs as YAML** — trivially extensible without code changes
+- **Rich progress bars** — transparent pipeline execution
+- **Pydantic v2 models** — strict validation throughout
+
+---
+
+## Examples
+
+See `examples/` for:
+- `sample-output/README.md` — A full generated script in documentary style
+- `custom-style.yaml` — Annotated custom style with noir detective theme
+
+---
+
+## Built With
+
+- **[Claude AI](https://anthropic.com)** — Script generation via `claude-sonnet-4-6`
+- **[ElevenLabs](https://elevenlabs.io)** — High-quality text-to-speech synthesis
+- **[GitPython](https://gitpython.readthedocs.io)** — Repository cloning
+- **[Rich](https://rich.readthedocs.io)** — Terminal UI and progress display
+- **[Pydantic](https://docs.pydantic.dev)** — Data validation and models
+- **[Click](https://click.palletsprojects.com)** — CLI framework
+
+---
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feat/new-style`)
+3. Add your changes
+4. Submit a pull request
+
+To add a new style, create a YAML file in `src/code_tales/styles/` following the
+existing format. See the [Style Showcase](#style-showcase) for examples.
+
+---
+
+## License
+
+MIT License — see [LICENSE](LICENSE) for details.
+
+Copyright 2024 krzemienski

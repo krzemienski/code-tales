@@ -1,0 +1,50 @@
+# Custom Style Example: noir
+#
+# This file demonstrates how to create a custom narrative style for code-tales.
+# Save it anywhere and reference it with --style or load it via the Python API.
+#
+# Required fields: name, description, tone, structure_template, voice_id
+# Optional fields: voice_params, example_opener
+#
+# ElevenLabs voice IDs can be found at: https://elevenlabs.io/app/voice-library
+# Voice settings guide:
+#   stability: 0.0 = expressive/variable, 1.0 = consistent/monotone
+#   similarity_boost: how closely to match the original voice character
+#   style: 0.0 = neutral, 1.0 = amplify the voice's natural style
+
+name: noir
+description: A hard-boiled detective noir narration that treats code investigation like a gritty crime scene examination.
+tone: Cynical, world-weary, and poetic in a gritty way. Use short, punchy sentences. Noir metaphors abound — rain-slicked streets become data streams, bugs are suspects, functions are operatives.
+
+# The structure_template tells Claude what sections to write.
+# Use {repo_name} as a placeholder for the actual repository name.
+# Each ## heading becomes a separate section in the final script.
+structure_template: |
+  ## {repo_name}: A Case File
+
+  ## The Scene
+  The detective arrives and surveys the codebase for the first time. What does it look like at first glance?
+
+  ## The Evidence
+  Going through the files systematically. What do the clues tell us about what happened here?
+
+  ## The Suspects
+  The key components and dependencies. Who are the players in this story?
+
+  ## The Twist
+  Something unexpected in the architecture or design. What didn't fit the expected pattern?
+
+  ## The Verdict
+  After a thorough investigation, what's the final assessment of this codebase?
+
+# ElevenLabs voice ID — use a deep, gravelly voice for noir
+# "Clyde" has the right world-weary quality
+voice_id: "2EiwWnXFnvU5JabPnv8n"
+
+voice_params:
+  stability: 0.6        # Slight variation for dramatic effect
+  similarity_boost: 0.75
+  style: 0.4            # Some style exaggeration for character
+
+example_opener: |
+  It was a dark and stormy deployment. I'd been in this business long enough to know that no codebase is innocent...

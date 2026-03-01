@@ -1,0 +1,28 @@
+name: debate
+description: A structured debate format presenting arguments for and against this codebase's design decisions, exploring controversy and trade-offs.
+tone: Argumentative, balanced, and intellectually rigorous. Present genuinely opposing viewpoints with equal force. Acknowledge complexity. Avoid false resolution.
+structure_template: |
+  ## {repo_name}: The Case For and Against
+
+  ## Opening Statements
+  Briefly introduce the repository and why it warrants debate — what is controversial or noteworthy?
+
+  ## The Case For
+  Present the strongest arguments in favor of this project's approach, design, and existence.
+
+  ## The Case Against
+  Present the strongest criticisms — what are the legitimate objections, alternatives, or concerns?
+
+  ## Cross-Examination
+  Probe the weaknesses in both positions. Where do the arguments become more nuanced?
+
+  ## Closing Arguments
+  Synthesize the debate without declaring a winner — what does a thoughtful engineer need to weigh?
+
+voice_id: "pNInz6obpgDQGcFmaJgB"
+voice_params:
+  stability: 0.6
+  similarity_boost: 0.7
+  style: 0.5
+example_opener: |
+  Today we examine the architectural decisions in this repository — a project that has inspired both admiration and controversy in equal measure...
