@@ -327,6 +327,23 @@ existing format. See the [Style Showcase](#style-showcase) for examples.
 
 ---
 
+## Troubleshooting
+
+### `ANTHROPIC_API_KEY` not set
+Set the environment variable: `export ANTHROPIC_API_KEY=sk-ant-...`. The `generate` command requires a valid Anthropic API key.
+
+### `code-tales generate` fails with git errors
+Ensure the target repository path is a valid git repository with at least one commit. The tool uses GitPython to read commit history.
+
+### Audio generation fails
+Audio synthesis requires `ELEVENLABS_API_KEY`. If not set, use `preview` mode to generate the script without audio: `code-tales preview /path/to/repo`.
+
+### `--config` option has no effect
+The `--config` CLI option is declared but not yet implemented. Use environment variables for configuration instead.
+
+### Style not found
+Use `code-tales list-styles` to see all 9 available styles. Style names are case-sensitive and must match exactly.
+
 ## License
 
 MIT License — see [LICENSE](LICENSE) for details.
