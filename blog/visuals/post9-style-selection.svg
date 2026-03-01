@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7498.2375 1247.25" width="7498.2375" height="1247.25" style="--bg:#0d1117;--fg:#e6edf3;--line:#3d444d;--accent:#4493f8;--muted:#9198a1;background:var(--bg)">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+  text { font-family: 'Inter', system-ui, sans-serif; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 30%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="8" markerHeight="4.8" refX="8" refY="2.4" orient="auto">
+    <polygon points="0 0, 8 2.4, 0 4.8" fill="var(--_arrow)" />
+  </marker>
+  <marker id="arrowhead-start" markerWidth="8" markerHeight="4.8" refX="0" refY="2.4" orient="auto-start-reverse">
+    <polygon points="8 0, 0 2.4, 8 4.8" fill="var(--_arrow)" />
+  </marker>
+</defs>
+<rect x="1633.575000000001" y="40" width="557.35" height="216" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+<rect x="1633.575000000001" y="40" width="557.35" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+<text x="1645.575000000001" y="54" dy="0.35em" font-size="12" font-weight="600" fill="var(--_text-sec)">&quot;ElevenLabs Voice Parameter Guide&quot;</text>
+<polyline points="1450.5749999999998,184 1450.5749999999998,296" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="1335.3146899743501,465.5396899743504 1335.3146899743501,609.3 724.7750000000005,609.3 724.7750000000005,637.8" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="666.2828080978834,778.3078080978828 666.2828080978834,865.3 542.1999999999998,865.3 542.1999999999998,986.025" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="811.9649284747734,749.6100715252271 811.9649284747734,865.3 1631.375,865.3 1631.375,986.025" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="1548.612497151711,482.7625028482887 1548.612497151711,609.3 1828.25,609.3 1828.25,719.3" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="1579.3889622193842,451.98603778061556 1579.3889622193842,609.3 3070.9375,609.3 3070.9375,644.9499999999999" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="3004.457121118862,763.169621118862 3004.457121118862,865.3 2742,865.3 2742,986.025" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="3137.417878881138,763.169621118862 3137.417878881138,865.3 3399.875,865.3 3399.875,893.8" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="3159.6687308186833,740.9187691813165 3159.6687308186833,865.3 6209.462500000001,865.3 6209.462500000001,904.525" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="3298.437594195611,1012.8125941956108 3298.437594195611,1142.75 1798.5375000000004,1142.75 1798.5375000000004,1171.25" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="3320.1868843455904,1034.5618843455904 3320.1868843455904,1142.75 3037.8625,1142.75 3037.8625,1171.25" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="3494.211840686816,1019.9131593131843 3494.211840686816,1142.75 4223.5625,1142.75 4223.5625,1171.25" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="6125.875273438626,1019.9377734386258 6125.875273438626,1142.75 5480.7625,1142.75 5480.7625,1171.25" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="6290.094800174282,1022.8926998257185 6290.094800174282,1142.75 6802.3125,1142.75 6802.3125,1171.25" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<rect x="596.6550000000005" y="595.8" width="256.24" height="27" rx="4" ry="4" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="724.7750000000005" y="609.3" text-anchor="middle" dy="0.35em" font-size="11" font-weight="400" fill="var(--_text-muted)">&quot;Technical engineers\nevaluating adoption&quot;</text>
+<rect x="456.9799999999998" y="851.8" width="170.44" height="27" rx="4" ry="4" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="542.1999999999998" y="865.3" text-anchor="middle" dy="0.35em" font-size="11" font-weight="400" fill="var(--_text-muted)">&quot;Dense, precise,\nno fluff&quot;</text>
+<rect x="1546.155" y="851.8" width="170.44" height="27" rx="4" ry="4" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="1631.375" y="865.3" text-anchor="middle" dy="0.35em" font-size="11" font-weight="400" fill="var(--_text-muted)">&quot;Step-by-step\neducational&quot;</text>
+<rect x="1708.71" y="595.8" width="239.08" height="27" rx="4" ry="4" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="1828.25" y="609.3" text-anchor="middle" dy="0.35em" font-size="11" font-weight="400" fill="var(--_text-muted)">&quot;Executive / leadership\nnon-technical&quot;</text>
+<rect x="2977.1375" y="595.8" width="187.6" height="27" rx="4" ry="4" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="3070.9375" y="609.3" text-anchor="middle" dy="0.35em" font-size="11" font-weight="400" fill="var(--_text-muted)">&quot;General developer\ncommunity&quot;</text>
+<rect x="2662.5" y="851.8" width="159" height="27" rx="4" ry="4" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="2742" y="865.3" text-anchor="middle" dy="0.35em" font-size="11" font-weight="400" fill="var(--_text-muted)">&quot;Casual, fun,\nhot takes&quot;</text>
+<rect x="3320.375" y="851.8" width="159" height="27" rx="4" ry="4" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="3399.875" y="865.3" text-anchor="middle" dy="0.35em" font-size="11" font-weight="400" fill="var(--_text-muted)">&quot;Dramatic,\nstory-driven&quot;</text>
+<rect x="6135.682500000001" y="851.8" width="147.56" height="27" rx="4" ry="4" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="6209.462500000001" y="865.3" text-anchor="middle" dy="0.35em" font-size="11" font-weight="400" fill="var(--_text-muted)">&quot;Balanced,\nanalytical&quot;</text>
+<rect x="1710.4575000000004" y="1129.25" width="176.16" height="27" rx="4" ry="4" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="1798.5375000000004" y="1142.75" text-anchor="middle" dy="0.35em" font-size="11" font-weight="400" fill="var(--_text-muted)">&quot;Hero&#39;s journey\nepic quest&quot;</text>
+<rect x="2912.6025" y="1129.25" width="250.52" height="27" rx="4" ry="4" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="3037.8625" y="1142.75" text-anchor="middle" dy="0.35em" font-size="11" font-weight="400" fill="var(--_text-muted)">&quot;Literary fiction\ncharacters + conflict&quot;</text>
+<rect x="4101.1625" y="1129.25" width="244.8" height="27" rx="4" ry="4" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="4223.5625" y="1142.75" text-anchor="middle" dy="0.35em" font-size="11" font-weight="400" fill="var(--_text-muted)">&quot;Nature documentary\nAttenborough-style&quot;</text>
+<rect x="5392.6825" y="1129.25" width="176.16" height="27" rx="4" ry="4" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="5480.7625" y="1142.75" text-anchor="middle" dy="0.35em" font-size="11" font-weight="400" fill="var(--_text-muted)">&quot;Expert Q&amp;A\nconversational&quot;</text>
+<rect x="6708.5125" y="1129.25" width="187.6" height="27" rx="4" ry="4" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="6802.3125" y="1142.75" text-anchor="middle" dy="0.35em" font-size="11" font-weight="400" fill="var(--_text-muted)">&quot;Pro/con\nstructured argument&quot;</text>
+<rect x="1291.5749999999998" y="148" width="318" height="36" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+<polygon points="1450.5749999999998,296 1592.975,438.4 1450.5749999999998,580.8 1308.1749999999997,438.4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+<polygon points="724.7750000000005,637.8 824.2750000000005,737.3 724.7750000000005,836.8 625.2750000000005,737.3" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+<rect x="39.99999999999977" y="986.025" width="1004.4000000000001" height="36" rx="0" ry="0" fill="#111" stroke="#4dacde" stroke-width="0.75" />
+<rect x="1068.4" y="986.025" width="1125.95" height="36" rx="0" ry="0" fill="#111" stroke="#4dacde" stroke-width="0.75" />
+<rect x="1225.9499999999998" y="719.3" width="1204.6000000000001" height="36" rx="0" ry="0" fill="#111" stroke="#e050b0" stroke-width="0.75" />
+<polygon points="3070.9375,644.9499999999999 3163.2875,737.3 3070.9375,829.65 2978.5875,737.3" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+<rect x="2218.35" y="986.025" width="1047.3000000000002" height="36" rx="0" ry="0" fill="#111" stroke="#22c55e" stroke-width="0.75" />
+<polygon points="3399.875,893.8 3510.1,1004.025 3399.875,1114.25 3289.65,1004.025" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+<polygon points="6209.462500000001,904.525 6308.962500000001,1004.025 6209.462500000001,1103.525 6109.962500000001,1004.025" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+<rect x="1153.3375000000003" y="1171.25" width="1290.4" height="36" rx="0" ry="0" fill="#111" stroke="#f59e0b" stroke-width="0.75" />
+<rect x="2467.7375" y="1171.25" width="1140.25" height="36" rx="0" ry="0" fill="#111" stroke="#f59e0b" stroke-width="0.75" />
+<rect x="3631.9875" y="1171.25" width="1183.15" height="36" rx="0" ry="0" fill="#111" stroke="#f59e0b" stroke-width="0.75" />
+<rect x="4839.1375" y="1171.25" width="1283.25" height="36" rx="0" ry="0" fill="#111" stroke="#22c55e" stroke-width="0.75" />
+<rect x="6146.3875" y="1171.25" width="1311.8500000000001" height="36" rx="0" ry="0" fill="#111" stroke="#22c55e" stroke-width="0.75" />
+<rect x="1649.575000000001" y="88" width="525.35" height="36" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+<rect x="1688.900000000001" y="148" width="446.70000000000005" height="36" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+<rect x="1688.900000000001" y="208" width="446.70000000000005" height="36" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+<text x="1450.5749999999998" y="166" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="var(--_text)">&quot;Choose Narrative Style\nfor Repository&quot;</text>
+<text x="1450.5749999999998" y="438.4" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="var(--_text)">&quot;What is the\nprimary audience?&quot;</text>
+<text x="724.7750000000005" y="737.3" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="var(--_text)">&quot;Depth\npreference?&quot;</text>
+<text x="542.1999999999998" y="1004.025" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="#fff">&quot;technical\n\nstability: 0.9\nsimilarity: 0.9\nstyle: 0.0\n\nVoice: Authoritative\nSections: Overview,\nArchitecture, API,\nPerformance&quot;</text>
+<text x="1631.375" y="1004.025" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="#fff">&quot;tutorial\n\nstability: 0.8\nsimilarity: 0.9\nstyle: 0.1\n\nVoice: Patient, warm\nSections: Prerequisites,\nCore Concepts, Deep Dive,\nHands-On Patterns&quot;</text>
+<text x="1828.25" y="737.3" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="#fff">&quot;executive\n\nstability: 0.8\nsimilarity: 0.9\nstyle: 0.2\n\nVoice: Crisp, action-oriented\nSections: Exec Summary,\nKey Metrics, Risk Assessment,\nRecommendations&quot;</text>
+<text x="3070.9375" y="737.3" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="var(--_text)">&quot;Preferred\ntone?&quot;</text>
+<text x="2742" y="1004.025" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="#fff">&quot;podcast\n\nstability: 0.5\nsimilarity: 0.7\nstyle: 0.6\n\nVoice: Enthusiastic\nSections: The Hook,\nFirst Impressions,\nDeep Dive, Hot Takes&quot;</text>
+<text x="3399.875" y="1004.025" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="var(--_text)">&quot;Narrative\nstructure?&quot;</text>
+<text x="6209.462500000001" y="1004.025" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="var(--_text)">&quot;Preferred\nformat?&quot;</text>
+<text x="1798.5375000000004" y="1189.25" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="#fff">&quot;storytelling\n\nstability: 0.4\nsimilarity: 0.7\nstyle: 0.7\n\nVoice: Epic, inspiring\nSections: Once Upon a Time,\nCall to Adventure,\nThe Journey, Breakthrough,\nThe Legacy&quot;</text>
+<text x="3037.8625" y="1189.25" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="#fff">&quot;fiction\n\nstability: 0.3\nsimilarity: 0.7\nstyle: 0.8\n\nVoice: Lyrical, evocative\nSections: The World,\nThe Characters,\nThe Conflict,\nThe Resolution&quot;</text>
+<text x="4223.5625" y="1189.25" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="#fff">&quot;documentary\n\nstability: 0.7\nsimilarity: 0.8\nstyle: 0.3\n\nVoice: Measured, awestruck\nSections: The Ecosystem,\nThe Inhabitants,\nThe Behavior,\nThe Future&quot;</text>
+<text x="5480.7625" y="1189.25" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="#fff">&quot;interview\n\nstability: 0.7\nsimilarity: 0.8\nstyle: 0.4\n\nVoice: Inquisitive, warm\nSections: Introduction,\nBackground, Architecture,\nDesign Decisions,\nFuture Direction&quot;</text>
+<text x="6802.3125" y="1189.25" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="#fff">&quot;debate\n\nstability: 0.6\nsimilarity: 0.7\nstyle: 0.5\n\nVoice: Rigorous, balanced\nSections: Opening Statements,\nCase For, Case Against,\nCross-Examination,\nClosing Arguments&quot;</text>
+<text x="1912.250000000001" y="106" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="var(--_text)">&quot;stability\n0.0 = expressive, variable\n1.0 = consistent, controlled&quot;</text>
+<text x="1912.250000000001" y="166" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="var(--_text)">&quot;similarity_boost\n0.0 = diverse\n1.0 = faithful to voice&quot;</text>
+<text x="1912.250000000001" y="226" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="var(--_text)">&quot;style\n0.0 = neutral delivery\n1.0 = dramatic, emotional&quot;</text>
+</svg>

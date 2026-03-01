@@ -1,0 +1,38 @@
+flowchart TD
+    START["Choose Narrative Style\nfor Repository"] --> Q1{"What is the\nprimary audience?"}
+
+    Q1 -->|"Technical engineers\nevaluating adoption"| Q_TECH{"Depth\npreference?"}
+    Q_TECH -->|"Dense, precise,\nno fluff"| TECHNICAL["technical\n\nstability: 0.9\nsimilarity: 0.9\nstyle: 0.0\n\nVoice: Authoritative\nSections: Overview,\nArchitecture, API,\nPerformance"]
+    Q_TECH -->|"Step-by-step\neducational"| TUTORIAL["tutorial\n\nstability: 0.8\nsimilarity: 0.9\nstyle: 0.1\n\nVoice: Patient, warm\nSections: Prerequisites,\nCore Concepts, Deep Dive,\nHands-On Patterns"]
+
+    Q1 -->|"Executive / leadership\nnon-technical"| EXECUTIVE["executive\n\nstability: 0.8\nsimilarity: 0.9\nstyle: 0.2\n\nVoice: Crisp, action-oriented\nSections: Exec Summary,\nKey Metrics, Risk Assessment,\nRecommendations"]
+
+    Q1 -->|"General developer\ncommunity"| Q_TONE{"Preferred\ntone?"}
+    Q_TONE -->|"Casual, fun,\nhot takes"| PODCAST["podcast\n\nstability: 0.5\nsimilarity: 0.7\nstyle: 0.6\n\nVoice: Enthusiastic\nSections: The Hook,\nFirst Impressions,\nDeep Dive, Hot Takes"]
+    Q_TONE -->|"Dramatic,\nstory-driven"| Q_DRAMA{"Narrative\nstructure?"}
+    Q_TONE -->|"Balanced,\nanalytical"| Q_FORMAT{"Preferred\nformat?"}
+
+    Q_DRAMA -->|"Hero's journey\nepic quest"| STORYTELLING["storytelling\n\nstability: 0.4\nsimilarity: 0.7\nstyle: 0.7\n\nVoice: Epic, inspiring\nSections: Once Upon a Time,\nCall to Adventure,\nThe Journey, Breakthrough,\nThe Legacy"]
+    Q_DRAMA -->|"Literary fiction\ncharacters + conflict"| FICTION["fiction\n\nstability: 0.3\nsimilarity: 0.7\nstyle: 0.8\n\nVoice: Lyrical, evocative\nSections: The World,\nThe Characters,\nThe Conflict,\nThe Resolution"]
+    Q_DRAMA -->|"Nature documentary\nAttenborough-style"| DOCUMENTARY["documentary\n\nstability: 0.7\nsimilarity: 0.8\nstyle: 0.3\n\nVoice: Measured, awestruck\nSections: The Ecosystem,\nThe Inhabitants,\nThe Behavior,\nThe Future"]
+
+    Q_FORMAT -->|"Expert Q&A\nconversational"| INTERVIEW["interview\n\nstability: 0.7\nsimilarity: 0.8\nstyle: 0.4\n\nVoice: Inquisitive, warm\nSections: Introduction,\nBackground, Architecture,\nDesign Decisions,\nFuture Direction"]
+    Q_FORMAT -->|"Pro/con\nstructured argument"| DEBATE["debate\n\nstability: 0.6\nsimilarity: 0.7\nstyle: 0.5\n\nVoice: Rigorous, balanced\nSections: Opening Statements,\nCase For, Case Against,\nCross-Examination,\nClosing Arguments"]
+
+    subgraph VOICE_PARAMS["ElevenLabs Voice Parameter Guide"]
+        direction LR
+        VP_STAB["stability\n0.0 = expressive, variable\n1.0 = consistent, controlled"]
+        VP_SIM["similarity_boost\n0.0 = diverse\n1.0 = faithful to voice"]
+        VP_STY["style\n0.0 = neutral delivery\n1.0 = dramatic, emotional"]
+    end
+
+    style TECHNICAL fill:#111,stroke:#4dacde,color:#fff
+    style TUTORIAL fill:#111,stroke:#4dacde,color:#fff
+    style EXECUTIVE fill:#111,stroke:#e050b0,color:#fff
+    style PODCAST fill:#111,stroke:#22c55e,color:#fff
+    style STORYTELLING fill:#111,stroke:#f59e0b,color:#fff
+    style FICTION fill:#111,stroke:#f59e0b,color:#fff
+    style DOCUMENTARY fill:#111,stroke:#f59e0b,color:#fff
+    style INTERVIEW fill:#111,stroke:#22c55e,color:#fff
+    style DEBATE fill:#111,stroke:#22c55e,color:#fff
+    style VOICE_PARAMS fill:#1a1a1a,stroke:#606060,color:#a0a0a0

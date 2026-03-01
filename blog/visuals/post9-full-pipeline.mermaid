@@ -1,0 +1,71 @@
+flowchart TD
+    subgraph INPUT["Input Resolution"]
+        URL["GitHub URL\nhttps://github.com/owner/repo"]
+        LOCAL["Local Path\n./my-project"]
+        URL -->|"_resolve_repo()"| VALIDATE_URL{"URL pattern\nmatch?"}
+        LOCAL -->|"_resolve_repo()"| VALIDATE_LOCAL{"Has .git\ndirectory?"}
+        VALIDATE_URL -->|Yes| CLONE["git.Repo.clone_from()\ndepth=1, single-branch"]
+        VALIDATE_URL -->|No| ERR_URL["ValueError:\nInvalid GitHub URL"]
+        VALIDATE_LOCAL -->|Yes| REPO_PATH["repo_path: Path"]
+        VALIDATE_LOCAL -->|No| ERR_LOCAL["ValueError:\nNot a git repository"]
+        CLONE --> TEMP_DIR["tempdir/repo-name/"]
+        TEMP_DIR --> REPO_PATH
+    end
+
+    subgraph ANALYZE["Analysis Engine"]
+        REPO_PATH --> STRUCT["analyze_structure()\nFile tree, entry points,\ntotal files, total size"]
+        REPO_PATH --> LANGS["_detect_languages()\nExtension counting\nacross 40+ file types"]
+        REPO_PATH --> DEPS["_extract_dependencies()\n8 package managers:\nnpm, pip, cargo, go,\ngemfile, swift, maven, toml"]
+        REPO_PATH --> FW["_detect_frameworks()\nReact, Django, FastAPI,\nVapor, Spring Boot, etc."]
+        REPO_PATH --> PAT["_detect_patterns()\nMonorepo, REST API,\nCLI, Docker, CI/CD"]
+        REPO_PATH --> KEY["_select_key_files()\nREADME, entry points,\nconfigs, largest sources"]
+        REPO_PATH --> README["_read_readme()\nTruncate at 10K chars"]
+
+        STRUCT --> ANALYSIS["RepoAnalysis\n(Pydantic model)"]
+        LANGS --> ANALYSIS
+        DEPS --> ANALYSIS
+        FW --> ANALYSIS
+        PAT --> ANALYSIS
+        KEY --> ANALYSIS
+        README --> ANALYSIS
+    end
+
+    subgraph NARRATE["Narration Engine"]
+        ANALYSIS --> PROMPT["_build_prompt()\nRepository data +\nstyle template"]
+        STYLE_REG["StyleRegistry\n9 YAML styles"] --> SYS_MSG["_build_system_message()\nTone, formatting rules,\naudio-optimized writing"]
+        PROMPT --> CLAUDE["Claude Streaming API\nclient.messages.stream()\nmodel: claude-sonnet-4-6\nmax_tokens: 4096"]
+        SYS_MSG --> CLAUDE
+        CLAUDE --> RAW["Raw markdown text"]
+        RAW --> PARSE["_parse_script()\nSplit on ## headings\nExtract [voice directions]"]
+        PARSE --> CLEAN["_clean_content()\nStrip **bold**, *italic*,\n`backticks`, ```blocks```"]
+        CLEAN --> SCRIPT["NarrationScript\nsections, word_count,\nestimated_duration"]
+    end
+
+    subgraph SYNTH["Audio Synthesis"]
+        SCRIPT --> TTS_TEXT["_build_tts_text()\nConcatenate sections\nwith paragraph pauses"]
+        SCRIPT --> MD_OUT["save_text_output()\nscript.md with metadata\nand voice directions"]
+        TTS_TEXT --> HAS_KEY{"ELEVENLABS_API_KEY\nconfigured?"}
+        HAS_KEY -->|No| TEXT_ONLY["Text-only output\nscript.md"]
+        HAS_KEY -->|Yes| API_CALL["_call_elevenlabs()\nPOST /v1/text-to-speech/\nmodel: eleven_multilingual_v2\nformat: mp3_44100_128"]
+        API_CALL --> RETRY{"Response\nstatus?"}
+        RETRY -->|200 OK| MP3["story.mp3\naudio bytes"]
+        RETRY -->|429 Rate Limit| BACKOFF["Exponential backoff\n1s, 2s, 4s"]
+        RETRY -->|500+ Server| BACKOFF
+        BACKOFF --> API_CALL
+        RETRY -->|401 Auth| ERR_AUTH["RuntimeError:\nInvalid API key"]
+        RETRY -->|3 failures| TEXT_ONLY
+    end
+
+    subgraph OUTPUT["Final Output"]
+        MP3 --> RESULT["AudioOutput\nscript: NarrationScript\naudio_path: story.mp3\ntext_path: script.md\nstyle: documentary"]
+        TEXT_ONLY --> RESULT
+        MD_OUT --> RESULT
+        RESULT --> CLEANUP["shutil.rmtree()\nRemove temp clone dir"]
+        CLEANUP --> DONE["Rich console output\nStyle, word count,\nduration estimate"]
+    end
+
+    style INPUT fill:#1a1a2e,stroke:#e050b0,color:#fff
+    style ANALYZE fill:#1a1a2e,stroke:#4dacde,color:#fff
+    style NARRATE fill:#1a1a2e,stroke:#e050b0,color:#fff
+    style SYNTH fill:#1a1a2e,stroke:#4dacde,color:#fff
+    style OUTPUT fill:#1a1a2e,stroke:#22c55e,color:#fff
