@@ -1,5 +1,19 @@
 # code-tales
 
+[![Featured in Agentic Development Blog — Post #9](https://img.shields.io/badge/Agentic%20Development%20Blog-Post%20%239-blue)](https://github.com/krzemienski/agentic-development-guide)
+
+## Related Post
+
+**Featured in the Agentic Development Blog series — Post #9: From GitHub Repos to Audio Stories**
+
+- Send date: Mon Jun 8, 2026
+- LinkedIn: _link added on send day_
+- Canonical blog post: https://ai.hack.ski/blog/<slug-set-on-send-day>
+- Series hub: [agentic-development-guide](https://github.com/krzemienski/agentic-development-guide)
+
+---
+
+
 [![PyPI version](https://img.shields.io/pypi/v/code-tales.svg)](https://pypi.org/project/code-tales/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
